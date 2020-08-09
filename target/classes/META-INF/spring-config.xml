@@ -18,8 +18,8 @@
 
      <!-- Define o DataSource e a conexão com o banco de dados -->
      <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-         <property name="url" value="jdbc:mysql://localhost:3306/spring-data-teste"/>
+         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+         <property name="url" value="jdbc:mysql://localhost:3308/springdata?useTimeZone=true&amp;serverTimezone=UTC"/>
          <property name="username" value="root"/>
          <property name="password" value=""/>
      </bean>
@@ -31,11 +31,11 @@
       <property name="dataSource" ref="dataSource"/>
       <property name="jpaVendorAdapter">
       	 	<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-      	 	   <property name="database" value="POSTGRESQL"/>
+      	 	   <property name="database" value="MYSQL"/>
       	 	   <property name="generateDdl" value="true"/> <!-- Gerar as tabelas no banco -->
       	 	</bean>
       </property>
-      <property name="persistenceUnitName" value="projeto-spring-data-aula"/>
+      <property name="persistenceUnitName" value="projeto-spring-data-treinamento"/>
      </bean>
      
      <!-- Ativa o controle transacional -->
