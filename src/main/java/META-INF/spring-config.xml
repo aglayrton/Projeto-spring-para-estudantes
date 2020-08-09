@@ -45,5 +45,5 @@
      </bean>
 
      <!-- Ativa os recursos para os Repository, aponta para o dao, vai ativar a persistência -->
-	<jpa:repositories base-package="projeto.spring.data.aula.dao" />
+	<jpa:repositories base-package="projeto.spring.data.treinamento.dao" />
 </beans>
