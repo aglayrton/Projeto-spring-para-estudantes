@@ -1,2 +1,2 @@
 # projeto-spring-data
-Projeto desenvolvido em meu treinamento da tecnologia
+Projeto desenvolvido para quem quer ter uma base de um crud com SPRING DATA
