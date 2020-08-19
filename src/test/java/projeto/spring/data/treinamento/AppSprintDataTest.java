@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import projeto.spring.data.treinamento.dao.InterfaceSpringDataTelefone;
 import projeto.spring.data.treinamento.dao.InterfaceSpringDataUser;
+import projeto.spring.data.treinamento.model.Telefone;
 import projeto.spring.data.treinamento.model.UsuarioSpringData;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -19,15 +21,29 @@ public class AppSprintDataTest {
 	@Autowired
 	private InterfaceSpringDataUser interfaceSpringDataUser;
 	
+	@Autowired
+	private InterfaceSpringDataTelefone interfaceSpringDataTelefone;
+	
 	@Test
 	public void testeInsert() {
 		UsuarioSpringData usuarioSpringData = new UsuarioSpringData();
-		usuarioSpringData.setEmail("alex@gmail.com");
-		usuarioSpringData.setNome("Alex");
+		usuarioSpringData.setEmail("mano@gmail.com");
+		usuarioSpringData.setNome("Mano");
 		usuarioSpringData.setLogin("admin");
 		usuarioSpringData.setSenha("admin");
 		
 		interfaceSpringDataUser.save(usuarioSpringData);
+	}
+	
+	@Test
+	public void testeInsertTelefone() {
+		Telefone telefone =  new Telefone();
+		telefone.setNumero("85991529944");
+		telefone.setTipo("celular");
+		
+		Optional<UsuarioSpringData> usuario = interfaceSpringDataUser.findById(1L);
+		telefone.setUsuario(usuario.get());
+		interfaceSpringDataTelefone.save(telefone);
 	}
 	
 	@Test
