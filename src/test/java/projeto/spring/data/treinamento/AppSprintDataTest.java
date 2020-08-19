@@ -22,8 +22,8 @@ public class AppSprintDataTest {
 	@Test
 	public void testeInsert() {
 		UsuarioSpringData usuarioSpringData = new UsuarioSpringData();
-		usuarioSpringData.setEmail("aglayrtonjuliao@gmail.com");
-		usuarioSpringData.setNome("Aglayrton");
+		usuarioSpringData.setEmail("alex@gmail.com");
+		usuarioSpringData.setNome("Alex");
 		usuarioSpringData.setLogin("admin");
 		usuarioSpringData.setSenha("admin");
 		
@@ -53,7 +53,7 @@ public class AppSprintDataTest {
 		
 		UsuarioSpringData data = usuarioSpringData.get();
 		
-		data.setNome("Julião");
+		data.setNome("");
 		
 		interfaceSpringDataUser.save(data);
 	}
@@ -83,7 +83,10 @@ public class AppSprintDataTest {
 			System.out.println(usuario.getNome());
 	}
 	
-	
+	@Test 
+	public void deletePorNome() {
+		interfaceSpringDataUser.deletePorNome("Alex");
+	}
 	
 	
 	
