@@ -32,9 +32,10 @@ public class AppSprintDataTest {
 	
 	@Test
 	public void testeConsulta() {
-		Optional<UsuarioSpringData> usuarioSpringData = interfaceSpringDataUser.findById(1l);
+		Optional<UsuarioSpringData> usuarioSpringData = interfaceSpringDataUser.findById(2l);
 		System.out.println(usuarioSpringData.get().getNome());
 		System.out.println(usuarioSpringData.get().getId());
+		System.out.println(usuarioSpringData.get().getEmail());
 	}
 	
 	@Test
@@ -89,7 +90,10 @@ public class AppSprintDataTest {
 	}
 	
 	
-	
+	@Test
+	public void updatePorNome() {
+		interfaceSpringDataUser.updateEmailPorNome("francisco.juliao@prof.ce.gov.br", "Aglayrton");
+	}
 	
 	
 	
